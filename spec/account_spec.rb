@@ -35,4 +35,8 @@ describe Account do
     end
   end
 
+  describe "#print_receipt" do
+    it ""
+  end
+
 end
