@@ -1,3 +1,5 @@
+require_relative "transaction"
+
 class Account
 
   attr_accessor :balance, :transactions
@@ -15,11 +17,17 @@ class Account
 
   def withdraw(value)
     raise "Please withdraw a positive amount" if !positive?(value)
+    save_transaction(value)
     @balance -= value
   end
 
   def save_transaction(value)
-    @transactions << value
+    @transaction = Transaction.new(value)
+    @transactions << @transaction
+  end
+
+  def print_receipt
+    puts @transactions
   end
 
   private

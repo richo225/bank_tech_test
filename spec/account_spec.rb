@@ -35,11 +35,4 @@ describe Account do
     end
   end
 
-  describe "transactions" do
-    it "transaction amount is stored when deposit/withdrawal made" do
-      account.deposit(20)
-      expect(account.transactions).to include(20)
-    end
-  end
-
 end

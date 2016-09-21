@@ -19,7 +19,8 @@ class Menu
     puts "1. Deposit money"
     puts "2. Withdraw money"
     puts "3. See balance"
-    puts "4. Exit"
+    puts "4. Print receipt"
+    puts "5. Exit"
   end
 
   def process selection
@@ -34,6 +35,9 @@ class Menu
         puts "Processing..."
         see_balance
       when "4"
+        puts "Processing..."
+        print_receipt
+      when "5"
         puts "Exiting program..."
         exit
       else
@@ -53,6 +57,11 @@ class Menu
 
   def see_balance
     puts "Current balance: £#{@account.balance}"
+  end
+
+  def print_receipt
+    puts "Receipt for this session:"
+    @account.print_receipt
   end
 
   private
