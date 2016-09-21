@@ -1,6 +1,6 @@
 class Transaction
 
-  attr_accessor :amount
+  attr_accessor :amount, :time
 
   def initialize(amount)
     @amount = amount

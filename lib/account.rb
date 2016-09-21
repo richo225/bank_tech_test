@@ -27,7 +27,10 @@ class Account
   end
 
   def print_receipt
-    puts @transactions
+    puts "Date || Amount || Balance"
+    @transactions.each do |transaction|
+      puts "#{transaction.time} || £#{transaction.amount}"
+    end
   end
 
   private
@@ -35,4 +38,5 @@ class Account
   def positive?(value)
     value > 0
   end
+
 end
