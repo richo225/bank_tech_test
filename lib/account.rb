@@ -11,6 +11,11 @@ class Account
     @balance += value
   end
 
+  def withdraw(value)
+    raise "Please withdraw a positive amount" if !positive?(value)
+    @balance -= value
+  end
+
   private
 
   def positive?(value)
