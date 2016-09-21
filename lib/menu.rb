@@ -32,6 +32,7 @@ class Menu
         withdraw
       when "3"
         puts "Processing..."
+        see_balance
       when "4"
         puts "Exiting program..."
         exit
@@ -50,10 +51,14 @@ class Menu
     @account.withdraw(get_amount)
   end
 
+  def see_balance
+    puts "Current balance: £#{@account.balance}"
+  end
+
   private
 
   def get_amount
-    STDIN.gets.chomp
+    STDIN.gets.chomp.to_i
   end
 
 end
